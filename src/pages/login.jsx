@@ -34,20 +34,21 @@ export function Login() {
             console.error("Error:", error); // Handle any errors that occur during fetch
         }
     };    
-  return (
-    <>
-      <h1 className="text-2xl font-bold text-center">Login</h1>
-      <form className="mt-4 flex flex-col gap-4 items-center" onSubmit={formSubmit}>
-        <div className="flex flex-col gap-2">
-            <label for="email">Email:</label>
-            <input className="bg-white w-xl text-black p-2" type="email" name="email" id="email" />
-        </div>
-        <div className="flex flex-col gap-2">
-            <label for="password">Password:</label>
-            <input className="bg-white w-xl text-black p-2" type="password" name="password" id="password" />
-        </div>
-        <button className="bg-neutral-950 p-4 rounded-2xl cursor-pointer hover:bg-blue-500">Login</button>
-      </form>
-    </>
-  );
+
+    return (
+        <>
+            <h1 className="text-2xl font-bold text-center">Login</h1>
+            <form className="mt-4 flex flex-col gap-4 items-center" onSubmit={formSubmit}>
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="email">Email:</label>
+                    <input className="bg-white w-xl text-black p-2" type="email" name="email" id="email" />
+                </div>
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="password">Password:</label>
+                    <input className="bg-white w-xl text-black p-2" type="password" name="password" id="password" />
+                </div>
+                <button className="bg-neutral-950 p-4 rounded-2xl cursor-pointer hover:bg-blue-500">Login</button>
+            </form>
+        </>
+    );
 }
