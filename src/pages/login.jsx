@@ -10,8 +10,8 @@ export function Login() {
         const password = document.querySelector("#password").value;
     
         const data = {
-            email: email,
-            password: password
+            email,
+            password
         };
     
         try {
