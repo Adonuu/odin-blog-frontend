@@ -36,7 +36,7 @@ export function Login() {
                 name: result.user.name,
                 token: result.token
             }
-            localStorage.setItem("blogUserInfo", userData);
+            localStorage.setItem("blogUserInfo", JSON.stringify(userData));
             setUser(userData);
             navigate("/");
         } catch (error) {
