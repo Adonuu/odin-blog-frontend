@@ -1,7 +1,10 @@
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../context/userContext';
 
 export function Login() {
     const navigate = useNavigate(); // Hook to get the navigate function
+    const { setUser } = useContext(UserContext);
 
     const formSubmit = async (e) => {
         e.preventDefault();
@@ -28,7 +31,13 @@ export function Login() {
             }
     
             const result = await response.json(); // Parse the JSON response
-            localStorage.setItem("blogjwt", result.token);
+            const userData = {
+                id: result.user.id,
+                name: result.user.name,
+                token: result.token
+            }
+            localStorage.setItem("blogUserInfo", userData);
+            setUser(userData);
             navigate("/");
         } catch (error) {
             console.error("Error:", error); // Handle any errors that occur during fetch
