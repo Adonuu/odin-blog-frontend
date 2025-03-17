@@ -34,6 +34,7 @@ export function Login() {
             const userData = {
                 id: result.user.id,
                 name: result.user.name,
+                role: result.user.role,
                 token: result.token
             }
             localStorage.setItem("blogUserInfo", JSON.stringify(userData));

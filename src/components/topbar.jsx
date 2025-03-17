@@ -24,6 +24,14 @@ export function TopBar() {
           {user ? (
             <>
               <span className="text-lg">Welcome, {user.name}!</span>
+              {user.role === "ADMIN" && (
+                <Link 
+                  to="/admin"
+                  className="relative text-lg hover:text-blue-500 after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 after:scale-x-0 hover:after:scale-x-100 hover:after:origin-left hover:no-underline"
+                >
+                  Admin
+                </Link>
+              )}
               <button 
                 onClick={handleLogout}
                 className="relative text-lg hover:text-blue-500 after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 after:scale-x-0 hover:after:scale-x-100 hover:after:origin-left hover:no-underline"
