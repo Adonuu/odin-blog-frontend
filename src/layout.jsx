@@ -54,7 +54,7 @@ export function Layout() {
     <>
       <UserContext.Provider value={{ user, setUser }}>
         <TopBar />
-          <div className="ml-auto mr-auto max-w-4xl p-4">
+          <div className="ml-auto mr-auto w-full max-w-4xl p-4">
             <div
               key={location.key}
               className={`transition-all duration-300 ease-in-out ${

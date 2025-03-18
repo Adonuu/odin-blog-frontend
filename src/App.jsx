@@ -12,6 +12,7 @@ import { Index } from './pages/index';
 import { Login } from './pages/login';
 import { SignUp } from './pages/signup';
 import { Admin } from './pages/admin';
+import { CreatePost } from './pages/createPost';
 
 
 // Create the router with a layout wrapper
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       { path: "login", element: <Login /> },
       { path: "signup", element: <SignUp /> },
       { path: "admin", element: <ProtectedRoute><Admin /></ProtectedRoute> },
+      { path: "admin/createPost", element: <ProtectedRoute><CreatePost /></ProtectedRoute> },
     ],
   },
 ]);

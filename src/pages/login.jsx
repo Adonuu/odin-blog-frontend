@@ -57,7 +57,7 @@ export function Login() {
                     <label htmlFor="password">Password:</label>
                     <input className="bg-white w-xl text-black p-2" type="password" name="password" id="password" />
                 </div>
-                <button className="bg-neutral-950 p-4 rounded-2xl cursor-pointer hover:bg-blue-500">Login</button>
+                <button className="px-4 py-2 cursor-pointer bg-blue-500 text-white rounded hover:bg-blue-600">Login</button>
             </form>
         </>
     );
