@@ -14,6 +14,9 @@ import { SignUp } from './pages/signup';
 import { Admin } from './pages/admin';
 import { CreatePost } from './pages/createPost';
 
+// components
+import { ManagePost } from './components/managePost';
+
 
 // Create the router with a layout wrapper
 const router = createBrowserRouter([
@@ -26,6 +29,7 @@ const router = createBrowserRouter([
       { path: "signup", element: <SignUp /> },
       { path: "admin", element: <ProtectedRoute><Admin /></ProtectedRoute> },
       { path: "admin/createPost", element: <ProtectedRoute><CreatePost /></ProtectedRoute> },
+      { path: "admin/managePost/:id", element: <ProtectedRoute><ManagePost /></ProtectedRoute> },
     ],
   },
 ]);

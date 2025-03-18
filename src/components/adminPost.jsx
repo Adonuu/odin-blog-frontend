@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
 import { useContext } from "react";
 import { UserContext } from "../context/userContext";
+import { useNavigate } from "react-router-dom";
 
 export function AdminPost({ post, setPosts }) {
+    const navigate = useNavigate();
     const { user } = useContext(UserContext);
     const handleDelete = async () => {
         const id = post.id;
@@ -28,9 +30,12 @@ export function AdminPost({ post, setPosts }) {
             console.error("Error deleting post:", error);
         }
     };
+    const handleClick = () => {
+        navigate(`/admin/managePost/${post.id}`)
+    }
     
     return (
-        <div className="flex flex-col gap-3 p-4 bg-neutral-950 rounded-2xl">
+        <div className="flex flex-col gap-3 p-4 bg-neutral-950 rounded-2xl cursor-pointer hover:bg-neutral-700" onClick={handleClick}>
             <div className="flex justify-between items-center">
                 <h3>{post.title}</h3>
                 <button className="px-4 py-2 cursor-pointer bg-blue-500 text-white rounded hover:bg-blue-600" onClick={handleDelete}>X</button>

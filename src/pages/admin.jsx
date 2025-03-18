@@ -34,7 +34,7 @@ export function Admin() {
     }
   
     getPosts();
-  },[]);
+  },[user]);
 
   const handleClick = () => {
     navigate("/admin/createPost");
