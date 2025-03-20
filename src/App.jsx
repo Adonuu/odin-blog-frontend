@@ -13,9 +13,12 @@ import { Login } from './pages/login';
 import { SignUp } from './pages/signup';
 import { Admin } from './pages/admin';
 import { CreatePost } from './pages/createPost';
+import { CreateComment } from './pages/createComment';
 
 // components
 import { ManagePost } from './components/managePost';
+import { PostDisplay } from './components/postDisplay';
+import { ManageComment } from './components/manageComment';
 
 
 // Create the router with a layout wrapper
@@ -30,6 +33,9 @@ const router = createBrowserRouter([
       { path: "admin", element: <ProtectedRoute><Admin /></ProtectedRoute> },
       { path: "admin/createPost", element: <ProtectedRoute><CreatePost /></ProtectedRoute> },
       { path: "admin/managePost/:id", element: <ProtectedRoute><ManagePost /></ProtectedRoute> },
+      { path: "post/:id", element: <PostDisplay /> },
+      { path: "comment/:id", element: <CreateComment /> },
+      { path: "comment/manageComment/:id", element: <ProtectedRoute><ManageComment /></ProtectedRoute> },
     ],
   },
 ]);
